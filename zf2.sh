@@ -15,6 +15,7 @@ while getopts ":m:h" opt; do
       echo "-m creating module $OPTARG..." >&2
 	lower="$(echo ${OPTARG} | tr 'A-Z' 'a-z')"
 	mkdir -p "$OPTARG/config" "$OPTARG/src/$OPTARG/Controller" "$OPTARG/src/$OPTARG/Form" "$OPTARG/src/$OPTARG/Model" "$OPTARG/view/$lower/$lower"
+	touch "$OPTARG/Module.php" "$OPTARG/autoload_classmap.php" "$OPTARG/config/module.config.php" "$OPTARG/src/$OPTARG/Controller/"$OPTARG"Controller.php" "$OPTARG/src/$OPTARG/Model/$OPTARG.php" "$OPTARG/src/$OPTARG/Model/"$OPTARG"Table.php"
 	tree $OPTARG;
       ;;
     h)
